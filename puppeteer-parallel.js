@@ -55,7 +55,7 @@ const parallelTests = async (capability) => {
                     action: 'setTestStatus',
                     arguments: {
                         status: 'failed',
-                        remark: 'Test failed with error: ' + e.get()
+                        remark: 'Test failed with error: ' + e.stack
                     }
                 })}`);
             await teardown(page, browser);
