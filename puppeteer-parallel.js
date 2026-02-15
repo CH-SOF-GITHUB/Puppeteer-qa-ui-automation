@@ -27,7 +27,7 @@ const parallelTests = async (capability) => {
         // Option 2 — équivalent avec une fonction vide
         await Promise.all([
             page.keyboard.press('Enter'),
-            page.waitForNavigation().then(() => {
+            page.waitForNavigation({waitUntil: 'load'}).then(() => {
                 console.log("STEP 4: Pressing Enter and waiting for navigation");
             })
         ]);
