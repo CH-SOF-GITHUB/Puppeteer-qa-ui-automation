@@ -1,0 +1,16 @@
+{
+  "name": "puppeteer-qa-ui-automation",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "test": "npm run single",
+    "single": "node navigation.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "puppeteer": "^24.37.3"
+  }
+}
