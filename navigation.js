@@ -5,35 +5,16 @@ It prevents silent JavaScript errors and enforces safer coding practices.
 However, when using ES modules, strict mode is automatically enabled.
 * */
 import {connect} from 'puppeteer';
+import {caps_chrome} from "./caps.conf.js";
 
 (async () => {
-    const capabilities = {
-        'browserName': 'Chrome',
-        'browserVersion': 'latest',
-        'LT:Options': {
-            'platform': 'Windows 11',
-            'build': 'chaker-puppeteer-build-1',
-            'name': 'My first Puppeteer test',
-            'resolution': '1366x768',
-            'projectName': 'Puppeteer-UI-PlayPro-Web-Site-Testing',
-            'user': 'LambdaTest02outlook',
-            'accessKey': 'LT_OeKIsPcFeDNbCXdCF8F61YHX4U4JIW0qFsvvCM4804D4Cuz',
-            'network': true,
-            'video': true,
-            'console': true,
-            'terminal': true,
-            'tunnel': false,
-            'geoLocation': 'TN'
-        }
-    };
-
     // code of script here
     let browser;
     let page;
     try {
         // define the browser  with browserWSEndpoint (browser end point URL)
         browser = await connect({
-            browserWSEndpoint: `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(capabilities))}`
+            browserWSEndpoint: `wss://cdp.lambdatest.com/puppeteer?capabilities=${encodeURIComponent(JSON.stringify(caps_chrome))}`
         });
         // define the page to control the browser chrome
         page = await browser.newPage();
@@ -41,6 +22,7 @@ import {connect} from 'puppeteer';
         await page.setViewport({
             width: 1024,
             height: 768,
+            // Window: devicePixelRatio property
             deviceScaleFactor: 1,
         });
         // navigate to the URL
