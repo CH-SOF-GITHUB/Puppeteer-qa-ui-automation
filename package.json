@@ -4,7 +4,7 @@
   "description": "",
   "type": "module",
   "scripts": {
-    "test": "npm run parallel",
+    "test": "node tests/PlayProV3/front/Login/samplelogin.js",
     "single": "node navigation.js",
     "parallel": "node puppeteer-parallel.js"
   },
